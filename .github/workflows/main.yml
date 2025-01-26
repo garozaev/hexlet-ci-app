@@ -1,8 +1,15 @@
 name: setup-and-test
 on: push
+env:
+  CI: true
+
 jobs:
  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+
 
     steps:
       - uses: actions/checkout@v4
